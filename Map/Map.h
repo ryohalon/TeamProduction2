@@ -7,6 +7,7 @@ class Map
 private:
 
 	std::vector<std::vector<Block>> chip_block;
+	std::vector<std::vector<int>> chip_data;
 
 	std::list<Unitlist> player_list;
 	std::list<Unitlist> enemy_list;

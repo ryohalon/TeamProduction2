@@ -5,12 +5,12 @@ Block::Block()
 
 }
 
-const Maptype Block::Getmaptype()
+Maptype Block::Getmaptype()
 {
 	return map_type;
 }
 
-const void Block::Setmaptype(int map_type)
+void Block::Setmaptype(int map_type)
 {
 	this->map_type = static_cast<Maptype>(map_type);
 }

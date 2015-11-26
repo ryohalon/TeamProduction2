@@ -477,23 +477,23 @@ int Map::Ismagichit(int unit_num, Vec2i cursol_pos)
 }
 
 std::vector<std::vector<int>> Map::GetChipType(){
-	std::vector<std::vector<int>> chip_type;
 
 	for (int y = 0; y < chip_block.size(); y++)
 	{
 		for (int x = 0; x < chip_block[y].size(); x++)
 		{
-			chip_type[y][x] = chip_block[y][x].Getmaptype();
+			chip_data[y][x] = chip_block[y][x].Getmaptype();
 		}
 	}
 
-	return chip_type;
+	return chip_data;
 }
 
 
 void Map::Setup(int stage, Vec2i map_num)
 {
 	chip_block = std::vector<std::vector<Block>>(map_num.y(), std::vector<Block>(map_num.x()));
+	chip_data = std::vector<std::vector<int>>(map_num.y(), std::vector<int>(map_num.x()));
 	hit_range = 0;
 
 	std::string file_name = "res/map_file/stage(" + std::to_string(stage) + ").txt";
@@ -558,7 +558,7 @@ void Map::Drawcursolpos(Vec2i pos)
 			if (x != pos.x())
 				continue;
 
-			drawBox(x * CHIPSIZE_X, -y * CHIPSIZE_Y, CHIPSIZE_X - 1, CHIPSIZE_Y - 1, 5, Color::lime);
+			drawBox(x * CHIPSIZE_X, y * CHIPSIZE_Y, CHIPSIZE_X - 1, CHIPSIZE_Y - 1, 5, Color::lime);
 			return;
 		}
 	}
@@ -581,7 +581,7 @@ void Map::DrawMagicrange(int unit_num)
 					if (cost > hit_range || chip_block[y][x].Getmaptype() == Maptype::NONE)
 						continue;
 
-					drawBox(x * CHIPSIZE_X, -y * CHIPSIZE_Y, CHIPSIZE_X - 1, CHIPSIZE_Y - 1, 5, Color::red);
+					drawBox(x * CHIPSIZE_X, y * CHIPSIZE_Y, CHIPSIZE_X - 1, CHIPSIZE_Y - 1, 5, Color::red);
 				}
 			}
 		}

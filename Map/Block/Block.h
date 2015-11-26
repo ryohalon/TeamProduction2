@@ -20,8 +20,8 @@ public:
 
 	Block();
 
-	const Maptype Getmaptype();
-	const void Setmaptype(int);
+	Maptype Getmaptype();
+	void Setmaptype(int);
 
 	void Setup();
 	void Update();
