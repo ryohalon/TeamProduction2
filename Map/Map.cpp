@@ -558,7 +558,7 @@ void Map::Drawcursolpos(Vec2i pos)
 			if (x != pos.x())
 				continue;
 
-			drawBox(x * CHIPSIZE_X, y * CHIPSIZE_Y, CHIPSIZE_X - 1, CHIPSIZE_Y - 1, 5, Color::lime);
+			drawBox(x * CHIPSIZE_X, -y * CHIPSIZE_Y, CHIPSIZE_X - 1, CHIPSIZE_Y - 1, 5, Color::lime);
 			return;
 		}
 	}
@@ -581,7 +581,7 @@ void Map::DrawMagicrange(int unit_num)
 					if (cost > hit_range || chip_block[y][x].Getmaptype() == Maptype::NONE)
 						continue;
 
-					drawBox(x * CHIPSIZE_X, y * CHIPSIZE_Y, CHIPSIZE_X - 1, CHIPSIZE_Y - 1, 5, Color::red);
+					drawBox(x * CHIPSIZE_X, -y * CHIPSIZE_Y, CHIPSIZE_X - 1, CHIPSIZE_Y - 1, 5, Color::red);
 				}
 			}
 		}

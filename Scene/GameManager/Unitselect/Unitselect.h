@@ -17,8 +17,8 @@ private:
 	
 	std::list<Vec2f> pos;
 
-	Lancer lancer;
-	Warrior warrior;
+	LancerP lancer;
+	WarriorP warrior;
 
 	int select_job;
 	bool player_or_enemy = true;

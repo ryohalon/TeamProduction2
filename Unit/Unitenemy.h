@@ -18,7 +18,7 @@ public:
 	void Draw();
 
 
-	void SetDirection(int direction);
+	void SetDirection(Direction direction);
 	void SetUnitlistPos(Vec2i getpos);
 	void SetDrawPos(Vec2i getpos);
 	void SetAstarMap(std::vector<std::vector<int>> getmap);
@@ -29,4 +29,5 @@ public:
 	int GetNum();
 	Unitlist GetUnitlist();
 	Status GetStatus();
+	Direction GetDirection();
 };
